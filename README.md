@@ -11,6 +11,8 @@ Corresponden a una serie de acciones que deben ejecutarse exitosamente en una ba
 - Aislamiento: Ocurren múltiples transacciones independientemente sin interferencia
 - Durabilidad: Los cambios de una transacción exitosa ocurren incluso si el sistema falla.
 
+### Microservicios
+
 ### Arquitectura monolítica vs de microservicios
 Una arquitectura monolítica corresponde a una arquitectura donde todos los procesos están estrechamente asociados y se ejecutan como un solo servicio.
 
@@ -32,6 +34,8 @@ Las desventajas son:
 - La complejidad es más alta, debido a la manera en que los microservicios están conectados entre sí.
 Requiere habilidades y conocimientos especializados, los que no todos los desarrolladores poseen.
 - La seguridad y el testeo están distribuidos, ya que cada módulo tiene sus propias vulnerabilidades y bugs, lo cual toma más tiempo de debuggear.
+
+### APIs
 
 
 ### Referencias
