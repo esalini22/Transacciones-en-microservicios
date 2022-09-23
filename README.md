@@ -1,6 +1,9 @@
 # Transacciones en microservicios
 ## Indice
 
+## Introducción
+
+## Conceptos previos
 ### 👉 Web Services
 
 
