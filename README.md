@@ -1,9 +1,9 @@
 # Transacciones en microservicios
-## Indice
+## 🔎 Indice
 
-## Introducción
+## 💁‍♂‍ Introducción
 
-## Conceptos previos
+## 👶 Conceptos previos
 ### 👉 Web Services
 
 
@@ -39,4 +39,4 @@ Los microservicios son autónomos, es decir, cada servicio componente en una arq
 ### 👉 APIs
 
 
-### 📖 Referencias
+## 📖 Referencias
