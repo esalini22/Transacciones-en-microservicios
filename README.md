@@ -13,6 +13,11 @@ Corresponden a una serie de acciones que deben ejecutarse exitosamente en una ba
 - Consistencia: La base de datos debe ser consistente (es decir, el cambio solo ocurre si el nuevo estado es válido) antes y después de la transacción
 - Aislamiento: Ocurren múltiples transacciones independientemente sin interferencia
 - Durabilidad: Los cambios de una transacción exitosa ocurren incluso si el sistema falla.
+Dentro de una transacción, un evento es un cambio de estado que le ocurre a una entidad, y un comando encapsula toda la información necesaria para ejecutar una acción o gatillar un evento futuro.
+
+### 👉 Mecanismos de seguridad
+#### Patrón Saga
+Es un patrón de manejo de fallos que ayuda a establecer la consistencia en aplicaciones distribuidas, y coordina transacciones entre múltiples microservicios para mantener la consistencia de datos. Una saga es una secuencia de transacciones que actualizan cada servicio y publican un mensaje o evento para gatillar el siguiente paso de a transacción. Si un paso falla, la saga ejecuta transacciones compensadoras que contrarrestan las transacciones anteriores.
 
 ### 👉 Microservicios
 
