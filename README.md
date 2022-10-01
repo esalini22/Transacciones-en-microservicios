@@ -52,6 +52,9 @@ El patrón saga es útil si:
 
 El patrón saga es difícil de debuggear e implementar y su complejidad aumenta con el número de microservicios.
 
+#### Protocolo Two-phase commit
+Es un protocolo de commit atómico y un algoritmo distribuido que coordina todos los procesos que participan en una transacción atómica distribuida para hacer commit o abortar (retroceder) la transacción. Corresponde a un set de acciones usadas para asegurarse de que un programa hace todos los cambios o no.
+
 ### 👉 APIs
 
 
