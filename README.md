@@ -15,11 +15,8 @@ Corresponden a una serie de acciones que deben ejecutarse exitosamente en una ba
 - Durabilidad: Los cambios de una transacción exitosa ocurren incluso si el sistema falla.
 Dentro de una transacción, un evento es un cambio de estado que le ocurre a una entidad, y un comando encapsula toda la información necesaria para ejecutar una acción o gatillar un evento futuro.
 
-### 👉 Mecanismos de seguridad
-#### Patrón Saga
-Es un patrón de manejo de fallos que ayuda a establecer la consistencia en aplicaciones distribuidas, y coordina transacciones entre múltiples microservicios para mantener la consistencia de datos. Una saga es una secuencia de transacciones que actualizan cada servicio y publican un mensaje o evento para gatillar el siguiente paso de a transacción. Si un paso falla, la saga ejecuta transacciones compensadoras que contrarrestan las transacciones anteriores.
-
 ### 👉 Microservicios
+
 
 ### 👉 Arquitectura monolítica vs de microservicios
 Una arquitectura monolítica corresponde a una arquitectura donde todos los procesos están estrechamente asociados y se ejecutan como un solo servicio.
@@ -40,6 +37,20 @@ Los microservicios son autónomos, es decir, cada servicio componente en una arq
 |Los equipos pueden fácilmente añadir funcionalidades y nuevas tecnologías a una arquitectura de microservicios a medida que se necesite|Requiere habilidades y conocimientos especializados, los que no todos los desarrolladores poseen|
 ||La seguridad y el testeo están distribuidos, ya que cada módulo tiene sus propias vulnerabilidades y bugs, lo cual toma más tiempo de debuggear|
 
+### 👉 Mecanismos de seguridad
+#### Patrón Saga
+Es un patrón de manejo de fallos que ayuda a establecer la consistencia en aplicaciones distribuidas, y coordina transacciones entre múltiples microservicios para mantener la consistencia de datos. Una saga es una secuencia de transacciones que actualizan cada servicio y publican un mensaje o evento para gatillar el siguiente paso de a transacción. Si un paso falla, la saga ejecuta transacciones compensadoras que contrarrestan las transacciones anteriores.
+
+Un microservicio publica un evento por cada transacción, y la siguiente transacción está basada inicialmente en el resultado del evento. Puede tomar dos diferentes caminos, dependiendo del éxito o fracaso de la transacción.
+
+![alt text](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/images/saga-overview.png)
+
+El patrón saga es útil si:
+- La aplicación requiere mantener consistencia de datos  a través de múltiples microservicios sin acoplamiento estrecho
+- Hay transacciones longevas y no se quieren bloquear otros microservicios si un microservicio corre por un largo tiempo
+- Se necesita retroceder si una operación falla en la secuencia.
+
+El patrón saga es difícil de debuggear e implementar y su complejidad aumenta con el número de microservicios.
 
 ### 👉 APIs
 
