@@ -6,6 +6,42 @@
 ## Conceptos previos 👨‍🎓
 ### 👉 Web Services
 
+Un web service es un sistema de software diseñado para admitir la interacción interoperable de varias máquinas entre si a través de una red que puede ser descripta, publicada, localizada e invocada desde cualquier plataforma y en cualquier lenguaje de programación. El funcionamiento detrás de las funcionalidades que entregan los servicios web es algo desconocido para la máquina que los ocupa, es por esto que quien quiera recibir los datos solo necesita usar el servicio y punto. 
+
+![Dibujo del funcionamiento de un web service](https://media.geeksforgeeks.org/wp-content/uploads/20210627134636/m1.png)
+
+El proceso que sigue un web service para funcionar es muy sencillo y se trata únicamente de un servicio de interacción y comunicación entre distintas aplicaciones a través de Internet.
+
+#### Funcionamiento
+
+Los webs services tienen una interfaz descrita en un formato procesable por él computador. Los sistemas interactúan entre si utilizando mensajes SOAP, normalmente transmitidos mediante HTTP con una serialización XML junto con otros estándares relacionados con la web.
+
+El proceso de funcionamiento se puede describir de la siguiente manera:
+
+1. El proveedor de servicios envía un archivo WSDL con la definición del servicio web al corredor de servicios. Con este archivo, el corredor de servicios es capaz de saber qué funciones será posible ejecutar en el servidor a través del web service. 
+
+2. Después, el solicitante del servicio se comunica con el corredor de servicios para averiguar quién es el proveedor. De esta forma, el solicitante puede comunicarse con el proveedor de servicios para enviar una solicitud SOAP en forma de mensaje HTTP al servidor. 
+
+3.  Una vez que esto sucede, el web service interpreta el contenido de la solicitud y el proveedor de servicios valida la petición del solicitante. Posteriormente, el web service envía los datos de respuesta necesarios en formato XML , usando nuevamente el protocolo SOAP y HTTP. 
+
+4.  Finalmente, el fichero XML, enviado por el proveedor de servicios, es validado una vez más por el solicitante de los servicios, utilizando un fichero XSD para interpretarlo. La información resultante se envía al software y estará lista para ser procesada. 
+
+
+#### Ejemplos de web services
+
+Algunos ejemplos que podemos encontrar son: 
+
+- Microsoft .NET 
+
+- WebLogic 
+
+- WebSphere 
+
+- Java Web Services Development Pack (JWSDP) 
+
+
+
+
 
 ### 👉 Transacciones
 Corresponden a una serie de acciones que deben ejecutarse exitosamente en una base de datos. Si una  de las operaciones falla, todos los pasos deben retroceder a su estado anterior para que la aplicación quede en su estado estable antiguo. Las transacciones poseen las siguientes propiedades:
@@ -18,7 +54,14 @@ Dentro de una transacción, un evento es un cambio de estado que le ocurre a una
 ### 👉 Microservicios
 
 
+
+
+
+
 ### 👉 Arquitectura monolítica vs de microservicios
+
+#### Arquitectura monolítica
+
 Una arquitectura monolítica corresponde a una arquitectura donde todos los procesos están estrechamente asociados y se ejecutan como un solo servicio.
 
 | Ventajas ✅| Desventajas ❌|
@@ -26,6 +69,8 @@ Una arquitectura monolítica corresponde a una arquitectura donde todos los proc
 |Son más fáciles de desarrollar y desplegar, pues los componentes están centralizados|Agregar o mejorar las características se vuelve más complejo a medida que crece la base del código|
 |Más fáciles de testear, ya que hay solo un repositorio de código|Aumentan el riesgo de la disponibilidad de la aplicación porque muchos procesos dependientes y estrechamente vinculados aumentan el impacto del error de un proceso|
 |No se requieren, o se requieren menos habilidades especializadas|Difícil de escalar, ya que para escalar una aplicación monolítica, esto debe hacerse todo a la vez añadiendo recursos de cómputo adicionales, lo cual es caro|
+
+#### Arquitectura de microservicios
 
 Una arquitectura de microservicios corresponde a una arquitectura donde la aplicación se crea con componentes independientes que ejecutan cada proceso de la aplicación como un servicio, los que se comunican a través de una interfaz bien definida mediante APIs ligeras.
 Los microservicios son autónomos, es decir, cada servicio componente en una arquitectura de microservicios se puede desarrollar, implementar, operar y escalar sin afectar el funcionamiento de otros servicios, sin tener que compartir código o implementaciones con otros servicios; y especializados, es decir, cada servicios está diseñado para un conjunto de capacidades y se enfoca en resolver un problema específico, y si el servicio se vuelve más complejo, se puede dividir en servicios más pequeños.
