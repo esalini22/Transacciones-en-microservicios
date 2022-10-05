@@ -99,6 +99,10 @@ El patrón saga es difícil de debuggear e implementar y su complejidad aumenta 
 
 #### Protocolo Two-phase commit
 Es un protocolo de commit atómico y un algoritmo distribuido que coordina todos los procesos que participan en una transacción atómica distribuida para hacer commit o abortar (retroceder) la transacción. Corresponde a un set de acciones usadas para asegurarse de que un programa hace todos los cambios o no.
+Las fases son:
+- Fase 1: Cada gestor de recursos se prepara para hacer commit de los cambios. La decisión de hacer o no commit depende de las respuestas de todos los gestores de recursos. Una vez que se hace una decisión de commit, se considera que se ha hecho commit de los cambios en la aplicación. Si la aplicación o algún gestor de recursos falla luego de que se toma la decisión, los cambios en la aplicación se harán luego del reinicio. Pero si antes de tomarse la decisión hay algún fallo, se revierten los cambios durante el reinicio.
+- Fase 2: El gestor de recursos hace commit o revierte los cambios.
+![alt text](https://www.ibm.com/docs/en/SSLTBW_2.4.0/com.ibm.zos.v2r4.iean100/iean1urs.gif)
 
 ### 👉 APIs
 
