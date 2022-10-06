@@ -126,7 +126,7 @@ Las fases son:
 Cada microservicio debe formar parte de la aplicación y a la vez ser autónomo con todas las ventajas y los desafíos que eso conlleva, ¿Cómo podemos identificar estos límites?.
 
 El objetivo al identificar los límites del modelo y el tamaño de cada microservicio no es llegar a la separación más específica posible, sino que debería ser llegar a la separación más significativa basada en el conocimiento del dominio. La idea es que cada microservicio sea lo más aislado posible , que este permita trabajar sin tener que estar solicitando recursos de otros microservicios (en lo posible).
-![alt text]=(https://www.connell.dev/images/diagrams/bounded-contexts.png)
+![alt text](https://www.connell.dev/images/diagrams/bounded-contexts.png)
 
 ### 👉 ¿Cómo crear consultas que recuperen datos de varios microservicios?
 Un segundo desafío es implementar consultas que recuperen datos de varios microservicios, evitando al mismo tiempo un exceso de comunicación entre los microservicios y las aplicaciones cliente remotas. Si la aplicación llega a tener muchos microservicios, administrar tantos puntos de conexión desde las apps clientes puede ser un caos. Las soluciones más comunes son las siguientes:
