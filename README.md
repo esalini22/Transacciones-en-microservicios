@@ -61,7 +61,7 @@ De manera similar, cuando una primera aplicación (o página web) solicita datos
 
 Usualmente las comunicaciones entre aplicaciones que utilizan API’s se establecen entre un cliente y un servidor , a través de un protocolo (SOAP, REST, GraphQL), en donde las operaciones básicas permitidas son Create, Read, Update, Delete (CRUD).
 
-## Microservicios
+## Microservicios ⚙️
 Los microservicios son tanto un estilo de arquitectura como un modo de programar software, en donde aplicaciones se dividen en sus elementos más pequeños e independientes entre sí. A diferencia del enfoque tradicional y monolítico de las aplicaciones, en el que todo se compila en una sola pieza, los microservicios son elementos independientes que funcionan en conjunto para llevar a cabo las mismas tareas. Cada uno de esos elementos o procesos es un microservicio.
 ![alt text](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/03/Microservice-Architecture-Of-Use-Case-Microservices-Tutorial-Edureka.png)
 Las arquitecturas de microservicios hacen que las aplicaciones sean más fáciles de escalar y más rápidas de desarrollar, si una parte de la aplicación requiere más recursos, en vez de escalar toda la aplicación, escalamos solamente el servicio que los requiere.
@@ -75,7 +75,7 @@ Por otro lado, algunos de los problemas que surgen son:
 - He incluso puede haber congestión de redes si los servicios realizan muchas conexiones hacia las API.
 
 
-## Arquitecturas
+## Arquitecturas 🧱
 ### 👉 Arquitectura monolítica
 
 Una arquitectura monolítica corresponde a una arquitectura donde todos los procesos están estrechamente asociados y se ejecutan como un solo servicio.
@@ -98,7 +98,7 @@ Los microservicios son autónomos, es decir, cada servicio componente en una arq
 |Los equipos pueden fácilmente añadir funcionalidades y nuevas tecnologías a una arquitectura de microservicios a medida que se necesite|Requiere habilidades y conocimientos especializados, los que no todos los desarrolladores poseen|
 ||La seguridad y el testeo están distribuidos, ya que cada módulo tiene sus propias vulnerabilidades y bugs, lo cual toma más tiempo de debuggear|
 
-## Mecanismos de seguridad
+## Mecanismos de seguridad 💾
 ### 👉 Patrón Saga
 Es un patrón de manejo de fallos que ayuda a establecer la consistencia en aplicaciones distribuidas, y coordina transacciones entre múltiples microservicios para mantener la consistencia de datos. Una saga es una secuencia de transacciones que actualizan cada servicio y publican un mensaje o evento para gatillar el siguiente paso de a transacción. Si un paso falla, la saga ejecuta transacciones compensadoras que contrarrestan las transacciones anteriores.
 
@@ -121,14 +121,14 @@ Las fases son:
 ![alt text](https://www.ibm.com/docs/en/SSLTBW_2.4.0/com.ibm.zos.v2r4.iean100/iean1urs.gif)
 
 
-## Desafíos 
-### ¿Cómo definir los límites de cada microservicio?
+## Desafíos 🧠
+### 👉 ¿Cómo definir los límites de cada microservicio?
 Cada microservicio debe formar parte de la aplicación y a la vez ser autónomo con todas las ventajas y los desafíos que eso conlleva, ¿Cómo podemos identificar estos límites?.
 
 El objetivo al identificar los límites del modelo y el tamaño de cada microservicio no es llegar a la separación más específica posible, sino que debería ser llegar a la separación más significativa basada en el conocimiento del dominio. La idea es que cada microservicio sea lo más aislado posible , que este permita trabajar sin tener que estar solicitando recursos de otros microservicios (en lo posible).
 ![alt text]=(https://www.connell.dev/images/diagrams/bounded-contexts.png)
 
-### ¿Cómo crear consultas que recuperen datos de varios microservicios?
+### 👉 ¿Cómo crear consultas que recuperen datos de varios microservicios?
 Un segundo desafío es implementar consultas que recuperen datos de varios microservicios, evitando al mismo tiempo un exceso de comunicación entre los microservicios y las aplicaciones cliente remotas. Si la aplicación llega a tener muchos microservicios, administrar tantos puntos de conexión desde las apps clientes puede ser un caos. Las soluciones más comunes son las siguientes:
 ![alt text](https://learn.microsoft.com/es-es/dotnet/architecture/microservices/architect-microservice-container-applications/media/direct-client-to-microservice-communication-versus-the-api-gateway-pattern/multiple-custom-api-gateways.png)
 - Puerta de enlace de API: Se trata de un nivel intermedio que actúa como punto de entrada único para un grupo de microservicios. No es buena idea tener una sola API que sirva como puerta para todos los microservicios, ya que se estaría replicando el comportamiento de una aplicación monolítica, por el contrario, conviene agrupar los microservicios en varias API dependiendo del propósito.
