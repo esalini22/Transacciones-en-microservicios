@@ -1,7 +1,4 @@
 # Transacciones en microservicios
-## Introducción 🚪
-
-
 ## Conceptos previos 👨‍🎓
 ### 👉 Web Services
 
