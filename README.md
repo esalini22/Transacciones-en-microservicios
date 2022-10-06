@@ -61,10 +61,18 @@ De manera similar, cuando una primera aplicación (o página web) solicita datos
 
 Usualmente las comunicaciones entre aplicaciones que utilizan API’s se establecen entre un cliente y un servidor , a través de un protocolo (SOAP, REST, GraphQL), en donde las operaciones básicas permitidas son Create, Read, Update, Delete (CRUD).
 
-## 👉 Microservicios
+## Microservicios
+Los microservicios son tanto un estilo de arquitectura como un modo de programar software, en donde aplicaciones se dividen en sus elementos más pequeños e independientes entre sí. A diferencia del enfoque tradicional y monolítico de las aplicaciones, en el que todo se compila en una sola pieza, los microservicios son elementos independientes que funcionan en conjunto para llevar a cabo las mismas tareas. Cada uno de esos elementos o procesos es un microservicio.
+![alt text](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/03/Microservice-Architecture-Of-Use-Case-Microservices-Tutorial-Edureka.png)
+Las arquitecturas de microservicios hacen que las aplicaciones sean más fáciles de escalar y más rápidas de desarrollar, si una parte de la aplicación requiere más recursos, en vez de escalar toda la aplicación, escalamos solamente el servicio que los requiere.
 
+Al mismo tiempo, ya que cada servicio es un código más pequeño y aislado, nos permite la mejor detección de errores.
 
+Por otro lado, algunos de los problemas que surgen son:
 
+- La complejidad de la aplicación al tener varias partes en movimiento al mismo tiempo.
+- Falta de control de cada equipo, ya que pueden utilizar distintas herramientas para realizar sus tareas.
+- He incluso puede haber congestión de redes si los servicios realizan muchas conexiones hacia las API.
 
 
 ## Arquitecturas
@@ -113,4 +121,16 @@ Las fases son:
 ![alt text](https://www.ibm.com/docs/en/SSLTBW_2.4.0/com.ibm.zos.v2r4.iean100/iean1urs.gif)
 
 
-## Referencias 📖
+## Desafíos 
+### ¿Cómo definir los límites de cada microservicio?
+Cada microservicio debe formar parte de la aplicación y a la vez ser autónomo con todas las ventajas y los desafíos que eso conlleva, ¿Cómo podemos identificar estos límites?.
+
+El objetivo al identificar los límites del modelo y el tamaño de cada microservicio no es llegar a la separación más específica posible, sino que debería ser llegar a la separación más significativa basada en el conocimiento del dominio. La idea es que cada microservicio sea lo más aislado posible , que este permita trabajar sin tener que estar solicitando recursos de otros microservicios (en lo posible).
+![alt text]=(https://www.connell.dev/images/diagrams/bounded-contexts.png)
+
+### ¿Cómo crear consultas que recuperen datos de varios microservicios?
+Un segundo desafío es implementar consultas que recuperen datos de varios microservicios, evitando al mismo tiempo un exceso de comunicación entre los microservicios y las aplicaciones cliente remotas. Si la aplicación llega a tener muchos microservicios, administrar tantos puntos de conexión desde las apps clientes puede ser un caos. Las soluciones más comunes son las siguientes:
+![alt text](https://learn.microsoft.com/es-es/dotnet/architecture/microservices/architect-microservice-container-applications/media/direct-client-to-microservice-communication-versus-the-api-gateway-pattern/multiple-custom-api-gateways.png)
+- Puerta de enlace de API: Se trata de un nivel intermedio que actúa como punto de entrada único para un grupo de microservicios. No es buena idea tener una sola API que sirva como puerta para todos los microservicios, ya que se estaría replicando el comportamiento de una aplicación monolítica, por el contrario, conviene agrupar los microservicios en varias API dependiendo del propósito.
+![alt text](https://learn.microsoft.com/es-es/azure/architecture/patterns/_images/materialized-view-pattern-diagram.png)
+- Patrón de vista materializada: Útil en aquellos casos en que la información que se requiere no se encuentra en un formato adecuado para ser visualizado o cuando resulta difícil generar o esperar la respuesta de una consulta. Se trata de tener previamente generadas tablas con los datos de las consultas más frecuentes para ahorrar tiempo.
