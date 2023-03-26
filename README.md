@@ -72,7 +72,7 @@ Por otro lado, algunos de los problemas que surgen son:
 
 - La complejidad de la aplicación al tener varias partes en movimiento al mismo tiempo.
 - Falta de control de cada equipo, ya que pueden utilizar distintas herramientas para realizar sus tareas.
-- He incluso puede haber congestión de redes si los servicios realizan muchas conexiones hacia las API.
+- E incluso puede haber congestión de redes si los servicios realizan muchas conexiones hacia las API.
 
 
 ## Arquitecturas 🧱
